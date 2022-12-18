@@ -68,6 +68,13 @@ public class DataContext : DbContext
                 new ProvinceState
                 {
                     Id = 2,
+                    Code = "ON",
+                    Description = "Ontario",
+                    CountryId = 1
+                },
+                new ProvinceState
+                {
+                    Id = 3,
                     Code = "ME",
                     Description = "Maine",
                     CountryId = 2

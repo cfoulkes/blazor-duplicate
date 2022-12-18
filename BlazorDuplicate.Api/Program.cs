@@ -18,6 +18,8 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 builder.Services.AddAutoMapper(typeof(Program));
 
+builder.Services.AddScoped<ClientPersonService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

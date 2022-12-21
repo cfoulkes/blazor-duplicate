@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BlazorDuplicate.Api.Models;
+using BlazorDuplicate.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorDuplicate.Api.Controllers;
@@ -14,13 +16,12 @@ public class ClientPersonController : ControllerBase
 
     public ClientPersonController(ClientPersonService clientPersonService)
     {
-            this.clientPersonService = clientPersonService;
-
+        this.clientPersonService = clientPersonService;
     }
 
     [HttpGet]
     public List<ClientPerson> GetAllClientPersons()
     {
-
+        return null;
     }
 }

@@ -9,15 +9,15 @@ namespace BlazorDuplicate.Api.Data;
 
 public class DataContext : DbContext
 {
-    public DataContext(DbContextOptions<DataContext> options) : base(options)
-    {
-    }
+    public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
     public DbSet<ClientType> ClientTypes => Set<ClientType>();
     public DbSet<Country> Countries => Set<Country>();
     public DbSet<ProvinceState> ProvinceStates => Set<ProvinceState>();
 
     public DbSet<Client> Clients => Set<Client>();
+    public DbSet<ClientPerson> ClientPersons => Set<ClientPerson>();
+
     // public DbSet<ProductCategory> ProductCategories => Set<ProductCategory>();
     // public DbSet<Product> Products => Set<Product>();
     // public DbSet<User> Users => Set<User>();
@@ -27,7 +27,9 @@ public class DataContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-			modelBuilder.Entity<Country>().HasData(
+        modelBuilder
+            .Entity<Country>()
+            .HasData(
                 new Country
                 {
                     Id = 1,
@@ -42,7 +44,9 @@ public class DataContext : DbContext
                 }
             );
 
-			modelBuilder.Entity<ClientType>().HasData(
+        modelBuilder
+            .Entity<ClientType>()
+            .HasData(
                 new ClientType
                 {
                     Id = 1,
@@ -57,7 +61,9 @@ public class DataContext : DbContext
                 }
             );
 
-			modelBuilder.Entity<ProvinceState>().HasData(
+        modelBuilder
+            .Entity<ProvinceState>()
+            .HasData(
                 new ProvinceState
                 {
                     Id = 1,
@@ -80,7 +86,5 @@ public class DataContext : DbContext
                     CountryId = 2
                 }
             );
-
     }
-
 }

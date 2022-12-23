@@ -17,19 +17,13 @@ public class ClientPersonRepository
         this.context = context;
     }
 
-    public async Task<IEnumerable<ClientPerson>> GetItems()
+    public async Task<List<ClientPerson>> GetItemsAsync()
     {
         var clientPersons = await context.ClientPersons.ToListAsync();
         return clientPersons;
     }
 
-    public async Task<IEnumerable<ClientPerson>> GetItem()
-    {
-        var clientPersons = await context.ClientPersons.ToListAsync();
-        return clientPersons;
-    }
-
-    public async Task<ClientPerson> GetItem(int id)
+    public async Task<ClientPerson?> GetItemAsync(int id)
     {
         var clientPerson = await context.ClientPersons.FindAsync(id);
         return clientPerson;

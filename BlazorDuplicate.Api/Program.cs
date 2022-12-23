@@ -1,4 +1,5 @@
 using BlazorDuplicate.Api.Data;
+using BlazorDuplicate.Api.Repositories;
 using BlazorDuplicate.Api.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +22,7 @@ builder.Services.AddScoped<UnitOfWork>();
 builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddScoped<ClientPersonService>();
+builder.Services.AddScoped<ClientPersonRepository>();
 
 var app = builder.Build();
 
